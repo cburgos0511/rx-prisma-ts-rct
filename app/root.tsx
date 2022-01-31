@@ -4,9 +4,11 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+import { Navbar } from "./components/navbar";
+import { ThemeProvider } from "./utils/theme-provider";
 
 import styles from "../app/tailwind.css";
 
@@ -27,10 +29,15 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
+      <body className="dark:bg-gray-900 bg-white transition duration-500">
+        <ThemeProvider>
+          <div className="container mx-auto ">
+            <Navbar />
+            <Outlet />
+            <ScrollRestoration />
+          </div>
+          <Scripts />
+        </ThemeProvider>
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>

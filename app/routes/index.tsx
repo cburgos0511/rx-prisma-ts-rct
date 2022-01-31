@@ -1,32 +1,29 @@
+import { List, Plus } from "react-feather";
+import { ActionCard } from "~/components/action-card/";
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
+    <section className="px-6">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+        <div className="col-span-2">
+          <h1 className="text-xl font-semibold dark:text-gray-400 text-gray-700 mb-4">
+            My Flow
+          </h1>
+          <ActionCard
+            title="Task"
+            icon={<List size={18} className="dark:text-gray-300 mr-4" />}
+            items={[
+              {
+                id: "1",
+                title: "Create a new project",
+              },
+              {
+                id: "2",
+                title: "Create a new task",
+              },
+            ]}
+          />
+        </div>
+      </div>
+    </section>
   );
 }
