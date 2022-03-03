@@ -75,7 +75,7 @@ function ActionCard({ title, icon, items }: ActionCardProp) {
   return (
     <div>
       {/* Main card functionality*/}
-      <div className="mb-4 flex justify-between w-full rounded-md border-t-[6px] bg-white shadow-md border-blue-900 p-4 dark:bg-gray-800">
+      <div className="mb-4 flex justify-between w-full ">
         <div className="flex items-center">
           {icon}
           <h2 className="dark:text-gray-300 text-gray-700 text-lg">{title}</h2>
@@ -110,7 +110,7 @@ function ActionCard({ title, icon, items }: ActionCardProp) {
                 state.selectedId === item.id
                   ? "border-blue-900"
                   : "border-transparent",
-                "ml-8 flex justify-between rounded-md border bg-white shadow-md  p-3 dark:bg-gray-800 transition duration-150"
+                "flex justify-between rounded-md border border-gray-200 bg-white shadow-md p-3 dark:border-gray-700 dark:bg-gray-800 transition duration-150"
               )}
             >
               <div className="flex items-center">
@@ -145,7 +145,7 @@ function ActionCard({ title, icon, items }: ActionCardProp) {
           ))}
         {/* New Task Being Added */}
         {addTask.isAdding && (
-          <div className="ml-8 flex justify-between rounded-md border border-gray-400 bg-white shadow-md  p-3 dark:bg-gray-800 transition duration-150">
+          <div className="rounded-md border border-gray-400 bg-white shadow-md px-3 py-4 dark:bg-gray-800 transition duration-150 w-full">
             <div className="flex items-center">
               <input
                 className="w-full bg-transparent h-full dark:text-gray-300 text-gray-700 focus:outline-none text-sm"
